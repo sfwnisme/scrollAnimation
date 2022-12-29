@@ -1,3 +1,4 @@
+/* =====[preloader first try]=====*/
 // export default function preload() {
 //   let now = performance.now();
 //   console.log(now);
@@ -13,19 +14,36 @@
 //   };
 // }
 
+/* =====[preloader second try]=====*/
 export default function preload() {
-  // let now = performance.now();
+  /* =====[preloader elements]=====*/
+  let preloadBg = document.createElement("div");
+  preloadBg.className = "hide";
+  let preloadBox = document.createElement("div");
+  preloadBox.className = "preloadBox";
+
+  preloadBg.append(preloadBox);
+  document.body.append(preloadBg);
+
+  /* =====[preloader time]=====*/
+  // let now = performance.now() * 39;
   let now = 5000;
-  // let now = 5000;
-  document.documentElement.style.setProperty("--preload_now", `${now}ms`)
-  
-  console.log(now);
+  document.documentElement.style.setProperty("--preload_now", `${now}ms`);
   let hid = document.querySelector(".hide");
-  window.addEventListener("load", () => {
-    setInterval(() => {
-      if (now) {
-        hid.classList.add("hide-fade");
-      }
-    }, now);
-  });
+
+  // console.log(now);
+  // window.addEventListener("load", () => {
+  //   setInterval(() => {
+  //     if (now) {
+  //       hid.classList.add("hide-fade");
+  //     }
+  //   }, now);
+  // });
+
+  /* =====[preloader function]=====*/
+  window.onload = () => {
+    preloadBg.classList.add("hide-fade");
+    preloadBox.classList.add("hid-box")
+
+  };
 }
