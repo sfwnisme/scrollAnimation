@@ -10,7 +10,7 @@ html,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: black;
+  background-color: var(--second-color);
   height: 100vh;
   width: 100%;
   top: 50%;
@@ -23,57 +23,63 @@ html,
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
+  overflow: hidden;
 }
 .hide-fade {
-  height: 0vh;
-  width: 0vw;
-  opacity: 1;
-  /* transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0); */
-  transition: var(--preload_now);
-  -webkit-transition: var(--preload_now);
-  -moz-transition: var(--preload_now);
-  -ms-transition: var(--preload_now);
-  -o-transition: var(--preload_now);
-}
-
-.hide .preloadBox {
-  /*background-color: red;
-  */
-  height: 100px;
-  width: 100px;
-  animation: rotate 1s;
-  -webkit-animation: rotate var(--preload_now) ease-in-out;
-  border: yellow 10px solid;
-  border-radius: 10%;
-  -webkit-border-radius: 10%;
-  -moz-border-radius: 10%;
-  -ms-border-radius: 10%;
-  -o-border-radius: 10%;
-}
-
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg) scale(0.6);
-    -webkit-transform: rotate(360deg) scale(0.6);
-    -moz-transform: rotate(360deg) scale(0.6);
-    -ms-transform: rotate(360deg) scale(0.6);
-    -o-transform: rotate(360deg) scale(0.6);
-  }
-}
-.hide-box {
   height: 0;
   width: 0;
-  transform: scale(0);
-  -webkit-transform: scale(0);
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
+  opacity: 1;
+  transition: var(--preload_now) ease-in;
+  -webkit-transition: var(--preload_now) ease-in;
+  -moz-transition: var(--preload_now) ease-in;
+  -ms-transition: var(--preload_now) ease-in;
+  -o-transition: var(--preload_now) ease-in;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
+.hide div {
+  background-color: var(--second-color-light);
+  height: 100px;
+  width: 100px;
+  animation: rotate calc(var(--preload_now) * 1) ease-in-out infinite;
+  -webkit-animation: rotate calc(var(--preload_now) * 1) ease-in-out infinite;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+@keyframes rotate {
+  30% {
+    transform: scale(0.5);
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    -o-transform: scale(1.1);
+    opacity: 1;
+}
+  70% {
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+    -moz-transform: scale(0.8);
+    -ms-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    opacity: 0;
+}
+}
+
 ::selection {
   background-color: var(--second-color-light);
 }
