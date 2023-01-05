@@ -37,7 +37,7 @@ export default function preload() {
   if (performance.now <= 500) {
     now = performance.now;
   } else {
-    now = 1200;
+    now = 1500;
   }
   // let now = 5000;
   document.documentElement.style.setProperty("--preload_now", `${now}ms`);
