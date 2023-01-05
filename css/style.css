@@ -28,7 +28,7 @@ html,
 .hide-fade {
   height: 0;
   width: 0;
-  opacity: 1;
+  opacity: 0;
   transition: var(--preload_now) ease-in;
   -webkit-transition: var(--preload_now) ease-in;
   -moz-transition: var(--preload_now) ease-in;
