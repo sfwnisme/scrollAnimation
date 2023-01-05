@@ -1,5 +1,5 @@
 # zak.com
-[Live Demo](https://sfwnisme.github.io/zak.com/)
+[Live Demo](https://sfwnisme.github.io/scrollAnimation/)
 .
 .
 .
